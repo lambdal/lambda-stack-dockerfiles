@@ -1,0 +1,12 @@
+Package: libcuda1-dummy
+Maintainer: Lambda Labs <software@lambdalabs.com>
+Version: 9.0
+Provides: libcuda1
+ , libcuda-5.0-1
+ , libcuda-5.5-1
+ , libcuda-6.0-1
+ , libcuda-6.5-1
+ , libcuda-7.0-1
+ , libcuda-7.5-1
+ , libcuda-8.0-1
+ , libcuda-9.0-1
