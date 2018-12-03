@@ -7,8 +7,8 @@ ADD control .
 RUN apt-get update && \
 	apt-get install --yes equivs && \
 	equivs-build control && \
-	dpkg -i libcuda1-dummy_9.0_all.deb && \
-	rm control libcuda1-dummy_9.0_all.deb && \
+	dpkg -i libcuda1-dummy_10.0_all.deb && \
+	rm control libcuda1-dummy_10.0_all.deb && \
 	apt-get remove --yes --purge --autoremove equivs && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -26,4 +26,4 @@ RUN apt-key add lambda.gpg && \
 # Setup for nvidia-docker
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=9.0"
+ENV NVIDIA_REQUIRE_CUDA "cuda>=10.0"
