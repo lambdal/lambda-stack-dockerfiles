@@ -19,6 +19,9 @@ RUN apt-get update && \
 	apt-key add lambda.gpg && \
 	rm lambda.gpg && \
 	echo "deb http://archive.lambdalabs.com/ubuntu bionic main" > /etc/apt/sources.list.d/lambda.list && \
+	echo "Acquire::http::Pipeline-Depth 0;" > /etc/apt/apt.conf.d/99fixbadproxy && \
+        echo "Acquire::http::No-Cache true;"   >> /etc/apt/apt.conf.d/99fixbadproxy && \
+        echo "Acquire::BrokenProxy    true;"   >> /etc/apt/apt.conf.d/99fixbadproxy && \
 	echo "Package: *" > /etc/apt/preferences.d/lambda && \
 	echo "Pin: origin archive.lambdalabs.com" >> /etc/apt/preferences.d/lambda && \
 	echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/lambda && \
