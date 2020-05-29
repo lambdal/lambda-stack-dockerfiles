@@ -20,7 +20,13 @@ RUN apt-key add lambda.gpg && \
 	echo "cudnn cudnn/license_preseed select ACCEPT" | debconf-set-selections && \
 	apt-get update && \
 	DEBIAN_FRONTEND=noninteractive \
-		apt-get install --no-install-recommends --yes lambda-stack-cuda lambda-server && \
+		apt-get install \
+		--yes \
+		--no-install-recommends \
+		--option "Acquire:http::No-Cache=true" \
+		--option "Acquire:http::Pipeline-Depth=0" \
+		lambda-stack-cuda \
+		lambda-server && \
 	rm -rf /var/lib/apt/lists/*
 
 # Setup for nvidia-docker
