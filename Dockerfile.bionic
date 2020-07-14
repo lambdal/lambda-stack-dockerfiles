@@ -28,8 +28,8 @@ RUN apt-get update && \
 		apt-get install \
 		--yes \
 		--no-install-recommends \
-		--option "Acquire:http::No-Cache=true" \
-		--option "Acquire:http::Pipeline-Depth=0" \
+		--option "Acquire::http::No-Cache=true" \
+		--option "Acquire::http::Pipeline-Depth=0" \
 		lambda-stack-cuda \
 		lambda-server && \
 	rm -rf /var/lib/apt/lists/*
