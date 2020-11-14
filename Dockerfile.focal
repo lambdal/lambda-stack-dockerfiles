@@ -23,6 +23,8 @@ RUN apt-get update && \
 	echo "Pin: origin archive.lambdalabs.com" >> /etc/apt/preferences.d/lambda && \
 	echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/lambda && \
 	echo "cudnn cudnn/license_preseed select ACCEPT" | debconf-set-selections && \
+	echo "cudnn cudnn/license_question_20170105 select ACCEPT" | debconf-set-selections && \
+	echo "cudnn cudnn/license_question_20200128 select ACCEPT" | debconf-set-selections && \
 	apt-get update && \
 	DEBIAN_FRONTEND=noninteractive \
 		apt-get install \
