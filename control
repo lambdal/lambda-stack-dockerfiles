@@ -1,7 +1,7 @@
 Package: libcuda1-dummy
 Maintainer: Lambda Labs <software@lambdalabs.com>
 Version: 11.8
-Provides: libcuda1
+Provides: libcuda1 (= 520)
  , libcuda-5.0-1
  , libcuda-5.5-1
  , libcuda-6.0-1
@@ -24,3 +24,4 @@ Provides: libcuda1
  , libcuda-11.6-1
  , libcuda-11.7-1
  , libcuda-11.8-1
+ , libnvidia-ml1 (= 520)
