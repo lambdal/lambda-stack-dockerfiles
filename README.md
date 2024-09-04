@@ -13,7 +13,6 @@ Dockerfiles with rolling-release Lambda Stack, designed for use with nvidia-cont
 Build the image with the appropriate command for the distribution you wish to use.
 
 ```
-sudo docker build -t lambda-stack:18.04 -f Dockerfile.bionic .
 sudo docker build -t lambda-stack:20.04 -f Dockerfile.focal .
 sudo docker build -t lambda-stack:22.04 -f Dockerfile.jammy .
 ```
