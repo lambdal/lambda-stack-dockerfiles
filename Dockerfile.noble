@@ -34,6 +34,11 @@ RUN apt-get update && \
 		lambda-server && \
 	rm -rf /var/lib/apt/lists/*
 
+# Let pip break system packages
+RUN \
+	echo "[global]" >> /etc/pip.conf && \
+	echo "break-system-packages = true" >> /etc/pip.conf
+
 # Setup for nvidia-docker
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
