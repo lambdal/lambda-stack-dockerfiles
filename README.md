@@ -15,6 +15,7 @@ Build the image with the appropriate command for the distribution you wish to us
 ```
 sudo docker build -t lambda-stack:20.04 -f Dockerfile.focal .
 sudo docker build -t lambda-stack:22.04 -f Dockerfile.jammy .
+sudo docker build -t lambda-stack:24.04 -f Dockerfile.noble .
 ```
 
 Note that building these docker images requires acceptance of the [cuDNN license agreement](https://docs.nvidia.com/deeplearning/sdk/cudnn-sla/index.html)
