@@ -30,8 +30,7 @@ RUN apt-get update && \
 		--no-install-recommends \
 		--option "Acquire::http::No-Cache=true" \
 		--option "Acquire::http::Pipeline-Depth=0" \
-		lambda-stack-cuda \
-		lambda-server && \
+		lambda-stack-cuda && \
 	rm -rf /var/lib/apt/lists/*
 
 # Let pip break system packages
