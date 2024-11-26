@@ -17,7 +17,7 @@ Note that only current LTS versions are supported: 20.04, 22.04, and 24.04.
 sudo docker build -t lambda-stack:22.04 --build-arg UBUNTU_VERSION=22.04 .
 ```
 
-Note that building these docker images requires acceptance of the [cuDNN license agreement](https://docs.nvidia.com/deeplearning/sdk/cudnn-sla/index.html)
+Note that building these docker images requires acceptance of the [cuDNN license agreement](https://docs.nvidia.com/deeplearning/cudnn/latest/reference/eula.html)
 
 ### Testing images
 
