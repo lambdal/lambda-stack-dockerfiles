@@ -7,17 +7,17 @@ WORKDIR /root/
 RUN printf "\
 Package: libcuda1-dummy\n\
 Maintainer: Lambda Labs <software@lambdalabs.com>\n\
-Version: 12.4\n\
-Provides: libcuda1 (= 550)\n\
- , libcuda-12.4-1\n\
- , libnvidia-ml1 (= 550)\n\
+Version: 12.8\n\
+Provides: libcuda1 (= 570)\n\
+ , libcuda-12.8-1\n\
+ , libnvidia-ml1 (= 570)\n\
 " > control
 
 RUN apt-get update && \
 	DEBIAN_FRONTEND=noninteractive apt-get install --yes equivs && \
 	equivs-build control && \
-	dpkg -i libcuda1-dummy_12.4_all.deb && \
-	rm control libcuda1-dummy_12.4* && \
+	dpkg -i libcuda1-dummy_12.8_all.deb && \
+	rm control libcuda1-dummy_12.8* && \
 	apt-get remove --yes --purge --autoremove equivs && \
 	rm -rf /var/lib/apt/lists/*
 
@@ -94,4 +94,4 @@ break-system-packages = true\n\
 # Setup for nvidia-docker
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-ENV NVIDIA_REQUIRE_CUDA "cuda>=12.4"
+ENV NVIDIA_REQUIRE_CUDA "cuda>=12.8"
